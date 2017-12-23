@@ -12,5 +12,5 @@ user_data = "~/Apache2/non-interactive-apache2.sh"
 
 #rds
 db_instance_class = "db.t2.micro"
-rds_password = "accubudget-123$%^"
-ssh_password = "sage"
+rds_password = "&YIhbjkj68i8090&*&123$%^"
+ssh_password = ""
