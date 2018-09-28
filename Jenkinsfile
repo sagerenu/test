@@ -1,13 +1,13 @@
 node {
 
 stage("Terraform install Red Hat") {
-               sh 'yum install wget -y'
-               sh 'wget https://releases.hashicorp.com/terraform/0.11.1/terraform_0.11.1_linux_amd64.zip'
-               sh 'yum update -y'
-               sh 'yum install unzip -y'
-               sh 'unzip terraform_0.11.1_linux_amd64.zip'
-               sh 'mv terraform /usr/local/bin/terraform'
-               sh 'rm -f  terraform_0.11.1_linux_amd64.zip'
+               sh 'sudo yum install wget -y'
+               sh 'sudo wget https://releases.hashicorp.com/terraform/0.11.1/terraform_0.11.1_linux_amd64.zip'
+               sh 'sudo yum update -y'
+               sh 'sudo yum install unzip -y'
+               sh 'sudo unzip terraform_0.11.1_linux_amd64.zip'
+               sh 'sudo mv terraform /usr/local/bin/terraform'
+               sh 'sudo rm -f  terraform_0.11.1_linux_amd64.zip'
           }
 
 stage('Clone repository') {
@@ -20,7 +20,7 @@ stage('terraform init') {
 stage("Plan") {
         sh "terraform plan -out=plan.out "
     }
-stage("Appy") {
-        sh "terraform plan -out=plan.out "
+stage("Apply") {
+        sh "terraform apply -out=apply.out "
     }
 }
