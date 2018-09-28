@@ -2,7 +2,7 @@ node {
 
 stage("Terraform install Red Hat") {
                sh 'sudo yum install wget -y'
-               sh 'sudo wget https://releases.hashicorp.com/terraform/0.11.1/terraform_0.11.1_linux_amd64.zip'
+               sh 'wget https://releases.hashicorp.com/terraform/0.11.1/terraform_0.11.1_linux_amd64.zip'
                sh 'sudo yum update -y'
                sh 'sudo yum install unzip -y'
                sh 'sudo unzip terraform_0.11.1_linux_amd64.zip'
