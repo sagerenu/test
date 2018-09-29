@@ -18,7 +18,7 @@ stage("Terraform install Red Hat") {
 
 
 stage('terraform init') {
-      sh 'terraform init'
+      sh 'terraform init -input=false'
     }
 stage("Plan") {
         sh 'terraform plan -out=plan.out'
