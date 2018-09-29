@@ -9,11 +9,9 @@ node {
 stage('init and Plan') {
         sh """ terraform -v """
         sh """ terraform init """
-        sh """ terraform plan -out=plan.out """
+
     }
-stage('Apply') {
-        sh """ terraform apply -out=plan.out """
-    }
+
 }
 
     def downloadTerraform(){
