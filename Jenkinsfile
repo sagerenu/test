@@ -11,6 +11,7 @@ stage("Terraform install Red Hat") {
                sh 'sudo unzip terraform_0.11.1_linux_amd64.zip'
                sh 'sudo mv terraform /usr/local/bin/terraform'
                sh 'sudo rm -f  terraform_0.11.1_linux_amd64.zip'
+               sh 'sudo export PATH=$PATH:/usr/local/bin/'
                env.PATH = "${env.PATH}:${env.WORKSPACE}"
 
           }
