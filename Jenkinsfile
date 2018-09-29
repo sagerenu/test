@@ -20,11 +20,11 @@ stage('Apply') {
     def statuscode = sh(
       script: "which terraform" , returnStatus:true
       )
-      if ($statuscode!=0) {
+      if (statuscode..trim().equals=0) {
 
-         sh "sudo yum install wget -y && wget https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip && sudo yum update -y && sudo yum install unzip -y && sudo  unzip -o terraform_0.11.8_linux_amd64.zip  && sudo chmod 777 terraform"
+            println("terraform already downloaded")
 
       } else {
-        println("terraform already downloaded")
+        sh "sudo yum install wget -y && wget https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip && sudo yum update -y && sudo yum install unzip -y && sudo  unzip -o terraform_0.11.8_linux_amd64.zip  && sudo chmod 777 terraform"
       }
     }
