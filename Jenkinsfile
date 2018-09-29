@@ -6,7 +6,9 @@ node {
            env.PATH = "${env.PATH}:${env.WORKSPACE}"
            }
 
-stage('Plan') {
+stage('init and Plan') {
+        sh """ terraform -v """
+        sh """ terraform init """
         sh """ terraform plan -out=plan.out """
     }
 stage('Apply') {
