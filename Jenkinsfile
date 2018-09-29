@@ -20,7 +20,7 @@ stage('Apply') {
     def statuscode = sh(
       script: "which terraform" , returnStatus:true
       )
-      if (statuscode..trim().equals=(0)) {
+      if (statuscode..trim().equals(0)) {
 
             println("terraform already downloaded")
 
