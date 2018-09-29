@@ -23,6 +23,6 @@ stage('init and Plan') {
             println("terraform already downloaded")
 
       } else {
-        sh "sudo yum install wget -y && wget https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip && sudo yum update -y && sudo yum install unzip -y && sudo  unzip -o terraform_0.11.8_linux_amd64.zip  && sudo chmod 777 terraform"
+        sh "sudo yum install wget -y && wget https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip && sudo yum update -y && sudo yum install unzip -y && sudo  unzip -o terraform_0.11.8_linux_amd64.zip  && sudo chmod 777 terraform && cp terraform /usr/local/bin/terraform"
       }
     }
