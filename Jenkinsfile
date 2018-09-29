@@ -18,7 +18,7 @@ stage('terraform init') {
       sh 'terraform init'
     }
 stage("Plan") {
-        sh 'terraform plan -out=plan.out ''
+        sh 'terraform plan -out=plan.out '
     }
 stage("Apply") {
         sh 'terraform apply -out=apply.out'
